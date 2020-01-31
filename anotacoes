@@ -1,0 +1,3 @@
+Metodo callback
+É um metódo que recebe como parâmetro, o retorno de uma função.
+função(função)
