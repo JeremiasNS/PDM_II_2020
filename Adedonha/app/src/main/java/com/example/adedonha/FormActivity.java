@@ -50,10 +50,11 @@ public class FormActivity extends AppCompatActivity {
                     i.putExtra("key_fruta", txtFruta.getText().toString());
                     i.putExtra("key_pais", txtPaises.getText().toString());
                     i.putExtra("key_animal", txtAnimal.getText().toString());
+                    i.putExtra("key_letra", letraEscolhida);
                     startActivity(i);
                     finish();
                 }else{
-                    Toast.makeText(getApplication(), "Preencha os campos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "Preencha os campos", Toast.LENGTH_LONG);
                 }
 
             }
@@ -65,22 +66,22 @@ public class FormActivity extends AppCompatActivity {
     private boolean validarFormulario(){
 
         boolean retorno = false;
-        if(!TextUtils.isEmpty(txtFruta.getText().toString()) && !verificarPrimeiraLetra(txtFruta.getText().toString())){
+        if(!TextUtils.isEmpty(txtFruta.getText().toString())){
             retorno = true;
         }else{
             txtFruta.setError("*");
             txtFruta.requestFocus();
         }
 
-        if(!TextUtils.isEmpty(txtAnimal.getText().toString()) && !verificarPrimeiraLetra(txtAnimal.getText().toString())){
-            retorno = true;
+        if(!TextUtils.isEmpty(txtAnimal.getText().toString())){
+                retorno = true;
         }else{
             txtAnimal.setError("*");
             txtAnimal.requestFocus();
         }
 
-        if(!TextUtils.isEmpty(txtPaises.getText().toString()) && !verificarPrimeiraLetra(txtPaises.getText().toString())){
-            retorno = true;
+        if(!!TextUtils.isEmpty(txtPaises.getText().toString())){
+                retorno = true;
         }else{
             txtPaises.setError("*");
             txtPaises.requestFocus();
@@ -89,18 +90,21 @@ public class FormActivity extends AppCompatActivity {
         return retorno;
     }
 
-    private boolean verificarPrimeiraLetra(String palavra){
+    /*private boolean verificarPrimeiraLetra(String palavra){
 
+        System.out.println(palavra);
         boolean retorno = false;
+        System.out.println(letraEscolhida.toLowerCase());
 
-        int i = palavra.indexOf(letraEscolhida);
+        int i = palavra.indexOf(letraEscolhida.toLowerCase());
+        System.out.println(i);
 
-        if(i == 0){
+        if(i != 0){
             retorno = true;
         }
 
         return retorno;
 
-    }
+    }*/
 
 }
