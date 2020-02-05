@@ -37,7 +37,7 @@ public class FormActivity extends AppCompatActivity {
         //Recebe a letra e atribui ao text view
         Intent receber = getIntent();
         letraEscolhida = receber.getStringExtra("key_letra");
-        txtDescricao.setText("Começãndo com a letra " + letraEscolhida + " \n digite o nome de um(a):");
+        txtDescricao.setText("Começãndo com\n a letra " + letraEscolhida + " digite o\n nome de um(a):");
 
         //Envia os dados preechidos no formulário
         btnEnviarForm.setOnClickListener(new View.OnClickListener() {
