@@ -1,3 +1,21 @@
 Metodo callback
 É um metódo que recebe como parâmetro, o retorno de uma função.
 função(função)
+
+
+AsyncTask 
+|API para operações com JSON 
+|Simplifica o uso de Threads e Handler
+|Utilização por periodo curto de tempo 
+|Vai no servidor e baixa o json no app local 
+|Vai dar os recursos de utilizar sem interromper a pilha de UI;
+|No backgroud;
+|Parâmetros=params(recurso),result e progress(retorno)
+|Metodos=onPreExecute(),doInBackground()-Fazer no fundo,
+|onProgressUpdate,onPostExecute
+|
+|Classe estends AsyncTask<URL, Integer, Long>
+|URL -- doBackground
+|Integer-- Para alimentar a progress bar
+|Long --  O retorno da thread
+|
