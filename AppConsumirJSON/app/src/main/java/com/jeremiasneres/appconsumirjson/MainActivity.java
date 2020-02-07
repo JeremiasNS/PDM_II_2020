@@ -35,11 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
         ObterRecurso or = new ObterRecurso();
         or.execute();
-
-
     }
 
-    private class ObterRecurso extends AsyncTask<String, Void, Void>{
+    private class ObterRecurso extends AsyncTask<Void,Void,Void>{
+
 
         @Override
         protected void onPreExecute() {
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Void doInBackground(String... strings) {
+        protected Void doInBackground(Void... strings) {
             Auxiliar auxiliar = new Auxiliar();
             String jsonStr = auxiliar.consumir(url);
             if (jsonStr!=null){
@@ -56,19 +55,20 @@ public class MainActivity extends AppCompatActivity {
                     //Pega a string e converte em um objeto
                     JSONObject jsonObject = new JSONObject(jsonStr);
                     //Rotulo do objeto json da pagina
-                    JSONArray jsonArray = jsonObject.getJSONArray("contacts");
+                    JSONArray jsonArray = jsonObject
+                            .getJSONArray("contacts");
 
                     //Cada indice para um objeto
-                    for (int i=0;i<jsonArray.length();i++){
-                        JSONObject object = jsonArray.getJSONObject(i);
-                        String nome = object.getString("nome");
-                        String email = object.getString("email");
-                        String endereco = object.getString("address");
+                    for(int i=0;i<jsonArray.length();i++){
+                        JSONObject ob = jsonArray.getJSONObject(i);
+                        String nome = ob.getString("name");
+                        String email = ob.getString("email");
+                        String endereco = ob.getString("address");
 
-                        JSONObject phone = object.getJSONObject("phone");
+                        JSONObject phone = ob.getJSONObject("phone");
                         String movel = phone.getString("mobile");
 
-                        HashMap<String, String> contato = new HashMap<>();
+                        HashMap<String,String> contato = new HashMap<>();
                         //pega o valor e joga na lista
                         contato.put("nome",nome);
                         contato.put("email",email);
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this, listaContatos,
                     R.layout.list_item,
                     new String[]{"nome","email","endereco","movel"},
-                    new int[]{R.id.nome, R.id.email, R.id.endereco, R.id.movel}
+                    new int[]{R.id.nome,R.id.email,R.id.endereco,R.id.movel}
             );
             lv.setAdapter(adapter);
         }
