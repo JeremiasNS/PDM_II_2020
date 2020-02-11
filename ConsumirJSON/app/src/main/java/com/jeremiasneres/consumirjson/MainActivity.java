@@ -19,7 +19,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView listView;
+    private ListView lv;
     private static String url = "https://jsonplaceholder.typicode.com/posts/";
     List<HashMap<String,String>> listaContatos;
 
@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listaContatos = new ArrayList<>();
-        listView = findViewById(R.id.listView);
+        lv = findViewById(R.id.listView);
 
         ObterRecurso or = new ObterRecurso();
         or.execute();
     }
 
-    private class ObterRecurso extends AsyncTask<Void, Void, Void>{
+    private class ObterRecurso extends AsyncTask<Void,Void,Void>{
 
         @Override
         protected void onPreExecute() {
@@ -45,18 +45,27 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... strings) {
+            //System.out.println("cheguei");
             Auxiliar auxiliar = new Auxiliar();
             String jsonStr = auxiliar.consumir(url);
+            return null;
+        }
+
+
+        /*
+        @Override
+        protected Void doInBackground(Void... strings) {
+
             if (jsonStr!=null){
                 try {
                     //Pega a string e converte em um objeto
                     //System.out.println(jsonStr);
                     JSONObject jsonObject = new JSONObject(jsonStr);
                     //Rotulo do objeto json da pagina
-                    //JSONArray jsonArray = jsonObject.getJSONArray("");
+                    JSONArray jsonArray = jsonObject.getJSONArray("posts");
 
                     //Cada indice para um objeto
-                   /* for(int i=0;i<jsonArray.length();i++){
+                    for(int i=0;i<jsonArray.length();i++){
                         JSONObject ob = jsonArray.getJSONObject(i);
                         String userId = ob.getString("userId");
                         String id = ob.getString("id");
@@ -72,13 +81,13 @@ public class MainActivity extends AppCompatActivity {
 
                         listaContatos.add(contato);
 
-                    }*/
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
             return null;
-        }
+        }*/
 
         @Override
         protected void onPostExecute(Void aVoid) {
@@ -89,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{"nome","email","endereco","movel"},
                     new int[]{R.id.userId,R.id.id,R.id.title,R.id.body}
             );
-            listView.setAdapter(adapter);
+            lv.setAdapter(adapter);
         }
     }
 

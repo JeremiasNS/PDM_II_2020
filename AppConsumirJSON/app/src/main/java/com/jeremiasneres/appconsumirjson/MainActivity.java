@@ -41,12 +41,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         @Override
+        protected Void doInBackground(Void... strings) {
+            Auxiliar auxiliar = new Auxiliar();
+            String jsonStr = auxiliar.consumir(url);
+            return null;
+        }
+
+        @Override
         protected void onPreExecute() {
             super.onPreExecute();
             Toast.makeText(getApplicationContext(), "download JSON...", Toast.LENGTH_SHORT).show();
         }
 
-        @Override
+        /*@Override
         protected Void doInBackground(Void... strings) {
             Auxiliar auxiliar = new Auxiliar();
             String jsonStr = auxiliar.consumir(url);
@@ -83,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             return null;
-        }
+        }*/
 
         @Override
         protected void onPostExecute(Void aVoid) {
