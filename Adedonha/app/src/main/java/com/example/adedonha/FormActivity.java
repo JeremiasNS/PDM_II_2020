@@ -43,7 +43,7 @@ public class FormActivity extends AppCompatActivity {
         btnEnviarForm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dadosValidados = validarFormulario();
+                dadosValidados = validarCampos();
 
                 if(dadosValidados) {
                     Intent i = new Intent(getApplicationContext(), ResultadoActivity.class);
@@ -56,16 +56,18 @@ public class FormActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(getApplication(), "Preencha os campos", Toast.LENGTH_LONG);
                 }
-
             }
         });
 
 
     }
 
-    private boolean validarFormulario(){
+    /*private boolean validarFormulario(){
 
         boolean retorno = false;
+
+        System.out.println(!TextUtils.isEmpty(txtFruta.getText().toString()));
+        System.out.println("primeiraletra=> "+verificarPrimeiraLetra(txtFruta.getText().toString()));
         if(!TextUtils.isEmpty(txtFruta.getText().toString())){
             retorno = true;
         }else{
@@ -80,7 +82,7 @@ public class FormActivity extends AppCompatActivity {
             txtAnimal.requestFocus();
         }
 
-        if(!!TextUtils.isEmpty(txtPaises.getText().toString())){
+        if(!TextUtils.isEmpty(txtPaises.getText().toString())){
                 retorno = true;
         }else{
             txtPaises.setError("*");
@@ -88,23 +90,59 @@ public class FormActivity extends AppCompatActivity {
         }
 
         return retorno;
+    }*/
+
+    private boolean validarCampos(){
+        boolean retorno = false;
+
+        String fruta = txtFruta.getText().toString();
+        String animal = txtAnimal.getText().toString();
+        String pais = txtPaises.getText().toString();
+
+        if(isCampoVazio(fruta) || isPrimeiraLetra(fruta)){
+            System.out.println("---->Fruta-Vazio="+isCampoVazio(fruta)+ " Letra1=" + isPrimeiraLetra(fruta));
+            txtFruta.requestFocus();
+        }else if (isCampoVazio(pais) || isPrimeiraLetra(pais)){
+            System.out.println("pais-Vazio="+isCampoVazio(pais)+ " Letra1=" + isPrimeiraLetra(pais));
+            txtPaises.requestFocus();
+        }else if (isCampoVazio(animal) || isPrimeiraLetra(animal)){
+            System.out.println("Animal-Vazio="+isCampoVazio(animal)+ " Letra1=" + isPrimeiraLetra(animal));
+            txtAnimal.requestFocus();
+        }else{
+            retorno = true;
+        }
+            //
+
+            System.out.println("Fruta-Vazio="+isCampoVazio(fruta)+ " Letra1=" + isPrimeiraLetra(fruta));
+
+        /*if(cont == 3){
+            retorno = true;
+        }*/
+        System.out.println(retorno);
+        return retorno;
     }
 
-    /*private boolean verificarPrimeiraLetra(String palavra){
+    private boolean isCampoVazio(String valor){
+        boolean resultado = (TextUtils.isEmpty(valor) || valor.trim().isEmpty());
+        return resultado;
+    }
 
-        System.out.println(palavra);
-        boolean retorno = false;
+    private boolean isPrimeiraLetra(String palavra){
+        System.out.println("Antes" + palavra);
+        boolean retorno = true;
+        palavra = palavra.toLowerCase();
+        System.out.println("depois" + palavra);
+
         System.out.println(letraEscolhida.toLowerCase());
-
         int i = palavra.indexOf(letraEscolhida.toLowerCase());
-        System.out.println(i);
+        System.out.println("indice "+i);
 
-        if(i != 0){
-            retorno = true;
+        if(i == 0){
+            retorno = false;
         }
 
         return retorno;
 
-    }*/
+    }
 
 }
