@@ -1,4 +1,4 @@
-package com.jeremiasneres.consumirjson;
+package com.jeremiasneres.jereson;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -10,25 +10,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Auxiliar {
-/*
-    //Antigo
-    public String consumir(String reqURL){
-        String response = null;
-        try {
-            URL url = new URL(reqURL);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            InputStream is = new BufferedInputStream(conn.getInputStream());
-            response = converter(is);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return response;
-    }*/
+    public static final String TAG = Auxiliar.class.getSimpleName();
 
-    //Novo
     public String consumir(String reqURL){
         String response = null;
         try {
@@ -50,30 +33,6 @@ public class Auxiliar {
         return response;
     }
 
-
-/*
-    //Antigo
-    private String converter(InputStream is) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-        String line = null;
-        try {
-            while ((line =  reader.readLine())!=null){
-                sb.append(line).append("\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return sb.toString();
-    }*/
-
-    //NOVO
     //pega os bytes e converte em String
     private String converter(InputStream is) {
         //
@@ -96,5 +55,6 @@ public class Auxiliar {
         }
         return sb.toString();
     }
+
 
 }

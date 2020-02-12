@@ -1,4 +1,4 @@
-package com.jeremiasneres.consumirjson;
+package com.jeremiasneres.jereson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,13 +15,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView lv;
     private static String url = "https://jsonplaceholder.typicode.com/posts/";
-    List<HashMap<String,String>> listaContatos;
+    //No arquivo para ser consumido
+    //Lista em que cada item será um objeto chave valor
+    ArrayList<HashMap<String,String>> listaContatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         ObterRecurso or = new ObterRecurso();
         or.execute();
+
     }
 
-    private class ObterRecurso extends AsyncTask<Void,Void,Void>{
-
-        @Override
-        protected Void doInBackground(Void... strings) {
-            Auxiliar auxiliar = new Auxiliar();
-            //String jsonStr = auxiliar.consumir(url);
-            return null;
-        }
+    private class ObterRecurso extends AsyncTask<Void,Void,Void> {
 
         @Override
         protected void onPreExecute() {
@@ -50,32 +45,21 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "download JSON...", Toast.LENGTH_SHORT).show();
         }
 
-        /*@Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            Toast.makeText(getApplicationContext(), "download JSON...", Toast.LENGTH_SHORT).show();
-        }
-
         @Override
         protected Void doInBackground(Void... strings) {
-            //System.out.println("cheguei");
             Auxiliar auxiliar = new Auxiliar();
             String jsonStr = auxiliar.consumir(url);
-            return null;
-        }
-
-
-
-        @Override
-        protected Void doInBackground(Void... strings) {
-
-            if (jsonStr!=null){
+            //System.out.println(jsonStr);
+            if (jsonStr==null){
                 try {
                     //Pega a string e converte em um objeto
-                    //System.out.println(jsonStr);
                     JSONObject jsonObject = new JSONObject(jsonStr);
+                   String teste = "algo";
+                    System.out.println(teste);
+                    //teste = jsonObject.getString("title");
+
                     //Rotulo do objeto json da pagina
-                    JSONArray jsonArray = jsonObject.getJSONArray("posts");
+                    /*JSONArray jsonArray = new JSONArray(jsonObject);
 
                     //Cada indice para um objeto
                     for(int i=0;i<jsonArray.length();i++){
@@ -93,14 +77,15 @@ public class MainActivity extends AppCompatActivity {
                         contato.put("body",body);
 
                         listaContatos.add(contato);
+                        System.out.println("AKI-------------------");
 
-                    }
+                    }*/
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
             return null;
-        }*/
+        }
 
         @Override
         protected void onPostExecute(Void aVoid) {
