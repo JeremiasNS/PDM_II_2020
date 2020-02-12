@@ -50,20 +50,19 @@ public class MainActivity extends AppCompatActivity {
             Auxiliar auxiliar = new Auxiliar();
             String jsonStr = auxiliar.consumir(url);
             //System.out.println(jsonStr);
-            if (jsonStr==null){
+            if (jsonStr!=null){
                 try {
+                    JSONArray contacts = new JSONArray(jsonStr);
+
                     //Pega a string e converte em um objeto
-                    JSONObject jsonObject = new JSONObject(jsonStr);
-                   String teste = "algo";
-                    System.out.println(teste);
-                    //teste = jsonObject.getString("title");
+                    //JSONObject jsonObject = new JSONObject(jsonStr);
 
                     //Rotulo do objeto json da pagina
-                    /*JSONArray jsonArray = new JSONArray(jsonObject);
+                    //JSONArray jsonArray = new JSONArray(jsonObject);
 
                     //Cada indice para um objeto
-                    for(int i=0;i<jsonArray.length();i++){
-                        JSONObject ob = jsonArray.getJSONObject(i);
+                    for(int i=0;i<contacts.length();i++){
+                        JSONObject ob = contacts.getJSONObject(i);
                         String userId = ob.getString("userId");
                         String id = ob.getString("id");
                         String title = ob.getString("title");
@@ -77,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
                         contato.put("body",body);
 
                         listaContatos.add(contato);
-                        System.out.println("AKI-------------------");
+                        //System.out.println("AKI-------------------");
 
-                    }*/
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
