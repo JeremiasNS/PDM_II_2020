@@ -1,8 +1,6 @@
 # PDM_II_2020
 
-##Conteúdo das aulas de programação para dispositivos móveis em java.
-
-##Conteúdo Programatico
+##Conteúdo programatico das aulas de programação para dispositivos móveis em java.
 
 -> Consumir/enviar JSON<br/>
 -> Navigator drawner<br/>
@@ -19,3 +17,5 @@
 -> Recursos de multimídia<br/>
 
 30/01/2020 - Jogo de Adedonha<br/>
+06/02/2020 - JereSON - Consumo de arquivo JSON nativamente<br/>
+13/02/2020 - GreSON - Consumo de arquivo JSON com api GSON<br/>

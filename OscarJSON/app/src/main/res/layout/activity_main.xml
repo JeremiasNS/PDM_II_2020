@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filmes - 2020"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/form"
+        android:fontFamily="@font/centurygothic"
+        android:textSize="40dp"
+        android:textColor="#FF6E40"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/form"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TableRow>
+            <TextView
+                android:text="Nome: "
+                android:textColor="#000"/>
+            <EditText
+                android:width="150dp"
+                android:id="@+id/nome"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Direção: "
+                android:textColor="#000"/>
+            <EditText
+                android:id="@+id/direcao"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Categoria: "
+                android:textColor="#000"/>
+            <EditText
+                android:id="@+id/categoria"/>
+        </TableRow>
+
+
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cadastrar"
+        app:layout_constraintTop_toBottomOf="@id/form"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/enviar"
+        android:text="Cadastrar"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/enviar"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Enviar"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
