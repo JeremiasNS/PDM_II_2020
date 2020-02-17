@@ -32,21 +32,21 @@
                 android:textColor="#000"/>
             <EditText
                 android:width="150dp"
-                android:id="@+id/nome"/>
+                android:id="@+id/etxt_nome"/>
         </TableRow>
         <TableRow>
             <TextView
                 android:text="Direção: "
                 android:textColor="#000"/>
             <EditText
-                android:id="@+id/direcao"/>
+                android:id="@+id/etxt_direcao"/>
         </TableRow>
         <TableRow>
             <TextView
                 android:text="Categoria: "
                 android:textColor="#000"/>
             <EditText
-                android:id="@+id/categoria"/>
+                android:id="@+id/etxt_categoria"/>
         </TableRow>
 
 
