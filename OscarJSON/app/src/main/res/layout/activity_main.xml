@@ -6,17 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bgmainactivity3"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Filmes - 2020"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/form"
-        android:fontFamily="@font/centurygothic"
-        android:textSize="40dp"
-        android:textColor="#FF6E40"/>
+        android:src="@drawable/letreiroprincipal"/>
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -29,24 +32,39 @@
         <TableRow>
             <TextView
                 android:text="Nome: "
-                android:textColor="#000"/>
+                android:textColor="#fff"
+                android:fontFamily="@font/manropesemibold"
+                android:textSize="17dp"/>
             <EditText
                 android:width="150dp"
-                android:id="@+id/etxt_nome"/>
+                android:id="@+id/etxt_nome"
+                android:textColor="#fff"
+                android:fontFamily="@font/manropesemibold"
+                android:textSize="17dp"/>
         </TableRow>
         <TableRow>
             <TextView
                 android:text="Direção: "
-                android:textColor="#000"/>
+                android:textColor="#fff"
+                android:fontFamily="@font/manropesemibold"
+                android:textSize="17dp"/>
             <EditText
-                android:id="@+id/etxt_direcao"/>
+                android:id="@+id/etxt_direcao"
+                android:textColor="#fff"
+                android:fontFamily="@font/manropesemibold"
+                android:textSize="17dp"/>
         </TableRow>
         <TableRow>
             <TextView
                 android:text="Categoria: "
-                android:textColor="#000"/>
+                android:textColor="#fff"
+                android:fontFamily="@font/manropesemibold"
+                android:textSize="17dp"/>
             <EditText
-                android:id="@+id/etxt_categoria"/>
+                android:id="@+id/etxt_categoria"
+                android:textColor="#fff"
+                android:fontFamily="@font/manropesemibold"
+                android:textSize="17dp"/>
         </TableRow>
 
 
@@ -60,7 +78,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/enviar"
-        android:text="Cadastrar"/>
+        android:text="Cadastrar"
+        android:background="@drawable/button2"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="3"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -70,7 +94,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Enviar"/>
+        android:text="Enviar"
+        android:background="@drawable/button2"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="3"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

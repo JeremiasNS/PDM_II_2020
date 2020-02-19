@@ -2,16 +2,12 @@ package com.jeremiasneres.oscarjson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.method.Touch;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,16 +15,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class FilmeActivity extends AppCompatActivity {
 
     TextView filme;
     private ListView lv;
-    private String result;
+    //private String result;
 
     ArrayList<HashMap<String, String>> listaContatos = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +33,18 @@ public class FilmeActivity extends AppCompatActivity {
         filme = findViewById(R.id.filmesView);
 
         SharedPreferences sharedPreferences = getSharedPreferences("JSON_FILMES", 0);
-        result = sharedPreferences.getString("JSON_FILMES", "");
+        String resultSharedPreferences = sharedPreferences.getString("JSON_FILMES", "");
         //filme.setText("Resultado --> " + result);
 
-       //formatar(result);
-        //algo();
+        formatarLista(resultSharedPreferences);
+        enviarLista();
 
-        ObterRecurso or = new ObterRecurso();
-        or.execute();
+        //ObterRecurso or = new ObterRecurso();
+        //or.execute();
 
     }
 
-
+    /*
     private class ObterRecurso extends AsyncTask<Void,Void,Void> {
 
         @Override
@@ -100,12 +94,11 @@ public class FilmeActivity extends AppCompatActivity {
             );
             lv.setAdapter(adapter);
         }
-    }
-    /*
-    protected void formatar(String jsonStr) {
-        System.out.println(jsonStr);
+    }*/
 
-        try {
+    protected void formatarLista(String jsonStr) {
+
+        /*try {
             JSONArray contacts = new JSONArray(jsonStr);
 
             JSONObject ob = contacts.getJSONObject(0);
@@ -121,16 +114,13 @@ public class FilmeActivity extends AppCompatActivity {
             contato.put("direcao", direcao);
             contato.put("categoria", categoria);
 
-            //Toast.makeText(getApplicationContext(), "nome= " + contato.get("nome"), Toast.LENGTH_LONG ).show();
-
             listaContatos.add(contato);
 
-            //System.out.println(contacts.get(0).toString());
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }}*/
 
-        /*if (jsonStr != null) {
+        if (jsonStr != null) {
             try {
                 JSONArray contacts = new JSONArray(jsonStr);
                 System.out.println(contacts.get(0).toString());
@@ -148,22 +138,21 @@ public class FilmeActivity extends AppCompatActivity {
                     contato.put("categoria", categoria);
 
                     listaContatos.add(contato);
-                    //System.out.println("AKI-------------------");
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            }
+        }
     }
 
-    public void algo() {
+    public void enviarLista() {
         ListAdapter adapter = new SimpleAdapter(
                 FilmeActivity.this, listaContatos,
                 R.layout.list_filme,
-                new String[]{"userId", "id", "title", "body"},
+                new String[]{"nome", "direcao", "categoria" },
                 new int[]{R.id.nome, R.id.direcao, R.id.categoria}
         );
         lv.setAdapter(adapter);
-    }*/
+    }
 
 }
