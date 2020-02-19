@@ -7,14 +7,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/nome"
         android:background="#F44336"
-        android:textColor="#fff"/>
+        android:textColor="#fff"
+        android:textAlignment="center"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/direcao"/>
+        android:id="@+id/direcao"
+        android:paddingLeft="20dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/categoria"/>
+        android:id="@+id/categoria"
+        android:paddingLeft="20dp"/>
 
 </LinearLayout>
