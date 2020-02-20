@@ -30,7 +30,7 @@ public class FilmeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_filme);
 
         lv = findViewById(R.id.listView);
-        filme = findViewById(R.id.filmesView);
+        //filme = findViewById(R.id.filmesView);
 
         SharedPreferences sharedPreferences = getSharedPreferences("JSON_FILMES", 0);
         String resultSharedPreferences = sharedPreferences.getString("JSON_FILMES", "");
