@@ -24,10 +24,8 @@ public class MainActivity extends AppCompatActivity {
     Button cadastrar;
     Button enviar;
 
-    List<Filme> dados = new ArrayList<>();
-    String strJson;
-
-    SharedPreferences sharedPreferences;
+    private List<Filme> dados = new ArrayList<>();
+    private String strJson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +42,11 @@ public class MainActivity extends AppCompatActivity {
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String retorno = cadastrar(nome.getText().toString(), direcao.getText().toString(),categoria.getText().toString());
-                Toast.makeText(getApplicationContext(), retorno, Toast.LENGTH_LONG).show();
+                cadastrar(nome.getText().toString(), direcao.getText().toString(), categoria.getText().toString());
+                Toast.makeText(getApplicationContext(), nome.getText().toString() + "\nCadastrado com sucesso!", Toast.LENGTH_LONG).show();
+                nome.setText("");
+                direcao.setText("");
+                categoria.setText("");
             }
         });
 
@@ -54,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 salvar();
 
-                Intent i = new Intent(getApplicationContext(),FilmeActivity.class);
-                //i.putExtra("key_letra", letrasTxt.getText().toString());
+                //Enviando para a FilmeActivity
+                Intent i = new Intent(getApplicationContext(), FilmeActivity.class);
                 startActivity(i);
                 finish();
             }
@@ -63,17 +64,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String cadastrar(String nome, String direcao, String categoria){
+    public void cadastrar(String nome, String direcao, String categoria) {
 
         dados.add(new Filme(nome, direcao, categoria));
 
+        //Utilizando biblioteca gson na conversão de uma Lista para formato json
         Gson gson = new Gson();
         strJson = gson.toJson(dados);
-        return strJson;
     }
 
-    public void salvar(){
-        sharedPreferences = getSharedPreferences("JSON_FILMES", 0);
+    public void salvar() {
+        //Utilizando o shared preferences para armazenar dados dos filmes
+        SharedPreferences sharedPreferences = getSharedPreferences("JSON_FILMES", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("JSON_FILMES", strJson);
         editor.apply();

@@ -7,5 +7,21 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="textFormMainActivity">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:fontFamily">@font/manropesemibold</item>
+    </style>
 
+    <style name="btnMainActivity">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/buttondourado</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#FFFFFF</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
 </resources>
