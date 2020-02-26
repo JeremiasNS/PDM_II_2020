@@ -12,22 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_perguntas"
         android:name="com.jeremiasneres.onepunchquiz.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:label="@string/menu_perguntas"
+        tools:layout="@layout/fragment_perguntas" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_resultado"
         android:name="com.jeremiasneres.onepunchquiz.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.jeremiasneres.onepunchquiz.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:label="@string/menu_resultado"
+        tools:layout="@layout/fragment_resultado" />
 
     <fragment
         android:id="@+id/nav_share"
@@ -35,9 +29,4 @@
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
 
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.jeremiasneres.onepunchquiz.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>
