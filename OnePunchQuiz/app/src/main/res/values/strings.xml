@@ -12,6 +12,14 @@
     <string name="menu_resultado">Resultado</string>
     <string name="menu_share">Compartilhar</string>
 
+    <string name="txt_sinopse">
+        One Punch-Man (ワンパンマン Wanpanman) é uma série de
+        webcomic criada pelo autor com o pseudónimo One, e é
+        publicada desde 2009. One Punch-Man conta a história
+        de Saitama,um super-herói extremamente poderoso, que
+        se entediou com a ausência dos desafios nas suas lutas
+        contra o mal e procura encontrar um oponente digno.</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

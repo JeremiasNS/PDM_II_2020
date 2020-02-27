@@ -18,7 +18,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
-import com.jeremiasneres.onepunchquiz.ui.InfoFragment.InfoFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -67,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_info:
-                Intent i = new Intent(getApplicationContext(),InfoFragment.class);
-                this.startActivity(i);
+                Intent i = new Intent(getApplicationContext(),InfoActivity.class);
+                startActivity(i);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
