@@ -2,11 +2,13 @@ package com.jeremiasneres.onepunchquiz;
 
 import android.content.ClipData;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.provider.MediaStore;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,17 +40,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Botão para enviar email
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivity(i);
+               // startActivityForResult(i, CAM_REQUEST);
             }
         });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        MenuItem item =  findViewById(R.id.action_info);
+        MenuItem item = findViewById(R.id.action_info);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -66,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_info:
-                Intent i = new Intent(getApplicationContext(),InfoActivity.class);
+                Intent i = new Intent(getApplicationContext(), InfoActivity.class);
                 startActivity(i);
                 return true;
             default:
