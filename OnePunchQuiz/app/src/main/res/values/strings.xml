@@ -22,4 +22,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pergunta_1">1 - No universo de one punch man, há quantos heróis classe S ?</string>
+    <string name="pergunta_2">2 - Qual o nome do autor de one punch man?</string>
+    <string name="pergunta_3">3 - Quanto Saitama tira na prova escrita da organização de superheróis?</string>
+    <string name="pergunta_4">4 - Qual é a cor do primeiro supervilão que Saitama enfrentou no anime?</string>
 </resources>
