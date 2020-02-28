@@ -73,13 +73,14 @@ public class MapsActivity extends
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setOnCameraIdleListener(this);
-        /*
-        // Add a marker in Sydney and move the camera
+
+        /*// Add a marker in Sydney and move the camera
         LatLng homeJeremiasNeres = new LatLng(-10.340801, -48.288268);
         mMap.addMarker(new MarkerOptions().position(homeJeremiasNeres).title("Esta é a localização da casa do Jeremias!"));
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(homeJeremiasNeres));
-        mMap.setMinZoomPreference(15.0f)*/
+        mMap.setMinZoomPreference(15.0f);*/
+
     }
 
     public void onClampToJeremias(View view) {

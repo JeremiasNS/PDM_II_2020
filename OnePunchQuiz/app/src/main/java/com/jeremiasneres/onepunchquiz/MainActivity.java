@@ -36,7 +36,7 @@ import android.widget.Toast;
 
 import java.lang.reflect.Method;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener {
+public class MainActivity extends AppCompatActivity implements FragmentListener, NavigationView.OnNavigationItemSelectedListener{
 
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -78,10 +78,14 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
           startActivity(sendIntent);*/
     }
 
+
+
     @Override
     public void metodo() {
         System.out.println("ok");
     }
+
+
 
 
     @Override
@@ -96,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,4 +127,15 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 || super.onSupportNavigateUp();
     }
 
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_whatts: {
+                System.out.println("oi");
+                break;
+            }
+        }
+        return false;
+    }
 }
