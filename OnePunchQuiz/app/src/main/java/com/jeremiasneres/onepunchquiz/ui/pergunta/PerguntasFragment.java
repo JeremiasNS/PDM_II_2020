@@ -1,5 +1,6 @@
 package com.jeremiasneres.onepunchquiz.ui.pergunta;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,9 +15,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.jeremiasneres.onepunchquiz.FragmentListener;
 import com.jeremiasneres.onepunchquiz.R;
 
-public class PerguntasFragment extends Fragment implements View.OnClickListener {
+public class PerguntasFragment extends Fragment{
+
+    private FragmentListener mListener;
 
     EditText pergunta1;
     EditText pergunta2;
@@ -32,17 +36,28 @@ public class PerguntasFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        pergunta1 = this.getActivity().findViewById(R.id.pergunta_1);
-        pergunta2 = this.getActivity().findViewById(R.id.pergunta_2);
-        pergunta3 = this.getActivity().findViewById(R.id.pergunta_3);
-        pergunta4 = this.getActivity().findViewById(R.id.pergunta_4);
-        btnEnviar = this.getActivity().findViewById(R.id.enviar);
-
         View root = inflater.inflate(R.layout.fragment_perguntas, container, false);
+
+        //pergunta1 = root.findViewById(R.id.pergunta_1);
+        //pergunta2 = root.findViewById(R.id.pergunta_2);
+        //pergunta3 = root.findViewById(R.id.pergunta_3);
+        //pergunta4 = root.findViewById(R.id.pergunta_4);
+
+        //btnEnviar = this.getActivity().findViewById(R.id.enviar);
+        btnEnviar = (Button) root.findViewById(R.id.enviar);
+        btnEnviar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //pontuar();
+                Toast.makeText(getActivity(), "acertos"+String.valueOf(acertos), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return root;
 
     }
-
 
     public void pontuar() {
         if (pergunta1.getText().toString() == "17") {
@@ -80,9 +95,4 @@ public class PerguntasFragment extends Fragment implements View.OnClickListener 
         editor.apply();
     }
 
-    @Override
-    public void onClick(View view) {
-        pontuar();
-        salvar();
-    }
 }

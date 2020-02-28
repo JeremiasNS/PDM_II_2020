@@ -21,6 +21,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.jeremiasneres.onepunchquiz.ui.pergunta.PerguntasFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -29,12 +30,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.lang.reflect.Method;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentListener {
+
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -67,33 +70,27 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
-
-
+        /*Intent sendIntent = new Intent();
+          sendIntent.setAction(Intent.ACTION_SEND);
+          sendIntent.putExtra(Intent.EXTRA_TEXT, "Olá");
+          sendIntent.setPackage("com.whatsapp");
+          sendIntent.setType("text/plain");
+          startActivity(sendIntent);*/
     }
 
-
+    @Override
+    public void metodo() {
+        System.out.println("ok");
+    }
 
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-
-
-
         switch (item.getItemId()) {
             case R.id.action_info:
                 Intent i = new Intent(getApplicationContext(), InfoActivity.class);
                 startActivity(i);
-                return true;
-            case R.id.nav_whatts:
-                Toast.makeText(getApplicationContext(),"oi",Toast.LENGTH_SHORT).show();
-                /*Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Olá");
-                sendIntent.setPackage("com.whatsapp");
-                sendIntent.setType("text/plain");
-                startActivity(sendIntent);*/
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -123,4 +120,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }
