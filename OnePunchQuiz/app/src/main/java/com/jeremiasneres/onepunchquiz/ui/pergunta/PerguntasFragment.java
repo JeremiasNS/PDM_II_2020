@@ -14,12 +14,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.jeremiasneres.onepunchquiz.FragmentListener;
 import com.jeremiasneres.onepunchquiz.R;
 
 public class PerguntasFragment extends Fragment{
 
+    private PerguntaViewModel perguntaViewModel;
     private FragmentListener mListener;
 
     EditText pergunta1;
@@ -36,7 +38,10 @@ public class PerguntasFragment extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        perguntaViewModel =
+                ViewModelProviders.of(this).get(PerguntaViewModel.class);
         View root = inflater.inflate(R.layout.fragment_perguntas, container, false);
+        return root;
 
         //pergunta1 = root.findViewById(R.id.pergunta_1);
         //pergunta2 = root.findViewById(R.id.pergunta_2);
@@ -44,7 +49,7 @@ public class PerguntasFragment extends Fragment{
         //pergunta4 = root.findViewById(R.id.pergunta_4);
 
         //btnEnviar = this.getActivity().findViewById(R.id.enviar);
-        btnEnviar = (Button) root.findViewById(R.id.enviar);
+    /*    btnEnviar = (Button) root.findViewById(R.id.enviar);
         btnEnviar.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -93,6 +98,8 @@ public class PerguntasFragment extends Fragment{
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("JSON_ACERTOS", String.valueOf(acertos));
         editor.apply();
+    }*/
     }
+
 
 }
