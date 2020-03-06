@@ -13,7 +13,7 @@
         android:id="@+id/setar_max_zoom"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        map:layout_constraintTop_toBottomOf="@id/setar_latlng_home_jeremias"
+        map:layout_constraintTop_toBottomOf="@id/setar_latlng_city_adelaide"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/camera_text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +22,7 @@
         android:background="#00FFFFFF"
         android:text="zoom max"
         android:textSize="10dp"
-        android:onClick="onClampToMinZoom"/>
+        android:onClick="onSetMinZoomClamp"/>
 
     <Button
         android:id="@+id/setar_min_zoom"
@@ -37,10 +37,27 @@
         android:text="zoom  min"
         android:background="#00FFFFFF"
         android:textSize="10dp"
-        android:onClick="onClampToMaxZoom"/>
+        android:onClick="onSetMaxZoomClamp"/>
 
     <Button
-        android:id="@+id/setar_latlng_home_jeremias"
+        android:id="@+id/setMinMaxZoomClamp"
+        android:layout_width="wrap_content"
+        android:paddingLeft="6dp"
+        android:layout_height="40dp"
+        map:layout_constraintBottom_toTopOf="@id/setar_latlng_city_adelaide"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@drawable/ic_ifto"
+        android:text="IFTO"
+        android:onClick="onSetMinMaxZoomClamp"
+        android:textColor="#fff"
+        android:textSize="14dp"
+        android:background="@drawable/buttonshape"
+
+        />    <Button
+        android:id="@+id/setar_latlng_city_adelaide"
         android:layout_width="wrap_content"
         android:paddingLeft="6dp"
         android:layout_height="40dp"
@@ -49,7 +66,7 @@
         app:layout_constraintRight_toLeftOf="@id/setar_latlng_pacific"
         android:layout_marginBottom="20dp"
         android:drawableLeft="@drawable/ic_home_white"
-        android:text="Jeremias"
+        android:text="Adelaide"
         android:onClick="onClampToJeremias"
         android:textColor="#fff"
         android:textSize="14dp"
@@ -61,7 +78,7 @@
         android:id="@+id/setar_latlng_pacific"
         android:layout_width="135dp"
         android:layout_height="40dp"
-        app:layout_constraintLeft_toRightOf="@id/setar_latlng_home_jeremias"
+        app:layout_constraintLeft_toRightOf="@id/setar_latlng_city_adelaide"
         app:layout_constraintRight_toRightOf="parent"
         map:layout_constraintBottom_toTopOf="@id/camera_text"
         android:layout_marginBottom="20dp"

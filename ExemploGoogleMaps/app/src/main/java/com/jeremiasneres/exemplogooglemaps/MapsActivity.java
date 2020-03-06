@@ -1,7 +1,6 @@
 package com.jeremiasneres.exemplogooglemaps;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends
         AppCompatActivity implements
@@ -34,7 +32,7 @@ public class MapsActivity extends
             .Builder().target(new LatLng(-34.92873, -138.59995))
             .zoom(20.0f).bearing(0).tilt(0).build();
 
-    private float nMinZoom, nMaxZoom;
+    private float mMinZoom, nMaxZoom;
     private TextView mCameraTextView;
 
     @Override
@@ -53,27 +51,62 @@ public class MapsActivity extends
 
 
     private void resetMinMaxZoom() {
+        mMinZoom = DEFAULT_MIN_ZOOM;
+        nMaxZoom = DEFAULT_MAX_ZOOM;
+    }
+
+    public void onClampToJeremias(View view) {
+        if (!checkReady()) {
+            return;
+        }
+        mMap.setLatLngBoundsForCameraTarget(ADELAIDE);
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(ADELAIDE_CAMERA));
+    }
+
+    public void onLanLngClampToReset(View view) {
+        if (!checkReady()) {
+            return;
+        }
+        mMap.setLatLngBoundsForCameraTarget(null);
+        toast("Limites de lat e lng resetados");
+    }
+
+    public void onSetMinZoomClamp(View view) {
+        if (!checkReady()) {
+            return;
+        }
+        mMinZoom = mMinZoom + ZOOM_DELTA;
+        mMap.setMinZoomPreference(mMinZoom);
+        toast("Min Zoom configurado!");
+    }
+
+    public void onSetMaxZoomClamp(View view) {
+        if (!checkReady()) {
+            return;
+        }
+        nMaxZoom = nMaxZoom - ZOOM_DELTA;
+        mMap.setMaxZoomPreference(nMaxZoom);
+        toast("Max Zoom Configurado!");
+    }
+
+    public void onSetMinMaxZoomClamp(View view) {
+        if (!checkReady()) {
+            return;
+        }
+        resetMinMaxZoom();
+        mMap.resetMinMaxZoomPreference();
+        toast("Zoom Min Max Configurado!");
     }
 
     @Override
-    protected void onPostResume() {
-        super.onPostResume();
+    protected void onResume() {
+        super.onResume();
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setOnCameraIdleListener(this);
-
         /*// Add a marker in Sydney and move the camera
         LatLng homeJeremiasNeres = new LatLng(-10.340801, -48.288268);
         mMap.addMarker(new MarkerOptions().position(homeJeremiasNeres).title("Esta é a localização da casa do Jeremias!"));
@@ -83,19 +116,9 @@ public class MapsActivity extends
 
     }
 
-    public void onClampToJeremias(View view) {
-    }
-
-    public void onClampToPacific(View view) {
-    }
-
-    public void onLanLngClampToReset(View view) {
-    }
-
-    public void onClampToMinZoom(View view) {
-    }
-
-    public void onClampToMaxZoom(View view) {
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
     }
 
     @Override
@@ -104,12 +127,19 @@ public class MapsActivity extends
         mCameraTextView.setText(mMap.getCameraPosition().toString());
     }
 
+    public void onClampToPacific(View view) {
+    }
+
     private boolean checkReady() {
         if (mMap == null) {
-            Toast.makeText(getApplicationContext(), "O mapa não está pronto ainda", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Mapa ainda não disponivel", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
+    }
+
+    private void toast(String msg) {
+        Toast.makeText(getApplicationContext(),msg, Toast.LENGTH_SHORT).show();
     }
 
 

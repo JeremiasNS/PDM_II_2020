@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LocalUser</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="permission_rationale_location">
+        Acessar o serviço de localização é necessário para demonstrar o
+        recurso\ 'minha localização \', que mostra sua localização atual
+        no mapa.
+    </string>
+
+    <string name="location_permission_denied">
+        Este exemplo requer
+        permissão de localização para ativar a camada\'minha localização\'.
+        Por favor, tente novamente e conceda acesso para usar o local.\n
+        Se a permissão foi negada permanentemente, ela pode ser ativada nas
+        configurações do sistema &gt; Aplicativos &gt; \'Demonstrações da API do
+        Google Maps\'
+    </string>
+
+    <string name="permission_requered_toast">
+        Permissão de localização é solicitada para esta demostração
+    </string>
+</resources>
