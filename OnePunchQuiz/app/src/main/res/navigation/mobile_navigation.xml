@@ -13,20 +13,15 @@
 
     <fragment
         android:id="@+id/nav_perguntas"
-        android:name="com.jeremiasneres.onepunchquiz.ui.gallery.GalleryFragment"
+        android:name="com.jeremiasneres.onepunchquiz.ui.pergunta.PerguntasFragment"
         android:label="@string/menu_perguntas"
         tools:layout="@layout/fragment_perguntas" />
 
     <fragment
         android:id="@+id/nav_resultado"
-        android:name="com.jeremiasneres.onepunchquiz.ui.slideshow.SlideshowFragment"
+        android:name="com.jeremiasneres.onepunchquiz.ui.resultado.ResultadoFragment"
         android:label="@string/menu_resultado"
         tools:layout="@layout/fragment_resultado" />
 
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.jeremiasneres.onepunchquiz.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
 
 </navigation>

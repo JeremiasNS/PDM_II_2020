@@ -12,6 +12,9 @@
     <string name="menu_resultado">Resultado</string>
     <string name="menu_share">Compartilhar</string>
 
+    <string name="Open">aberto</string>
+    <string name="Close">fechado</string>
+
     <string name="txt_sinopse">
         One Punch-Man (ワンパンマン Wanpanman) é uma série de
         webcomic criada pelo autor com o pseudónimo One, e é
@@ -22,4 +25,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pergunta_1">1 - No universo de one punch man, há quantos heróis classe S ?</string>
+    <string name="pergunta_2">2 - Qual o nome do autor de one punch man?</string>
+    <string name="pergunta_3">3 - Quanto Saitama tira na prova escrita da organização de superheróis?</string>
+    <string name="pergunta_4">4 - Qual é a cor do primeiro supervilão que Saitama enfrentou no anime?</string>
 </resources>
