@@ -28,8 +28,15 @@ public class MapsActivity extends
     private static final LatLngBounds ADELAIDE = new LatLngBounds(
             new LatLng(-35.0, 138.58), new LatLng(-34.9, 138.61));
 
+    private static final LatLngBounds IFTO_PALMAS = new LatLngBounds(
+            new LatLng(-10.197871,-48.311234), new LatLng(-10.197871,-48.311234));
+
     private static final CameraPosition ADELAIDE_CAMERA = new CameraPosition
             .Builder().target(new LatLng(-34.92873, -138.59995))
+            .zoom(20.0f).bearing(0).tilt(0).build();
+
+    private static final CameraPosition IFTO_PALMAS_CAMERA = new CameraPosition
+            .Builder().target(new LatLng(-10.197871,-48.311234))
             .zoom(20.0f).bearing(0).tilt(0).build();
 
     private float mMinZoom, nMaxZoom;
@@ -55,12 +62,22 @@ public class MapsActivity extends
         nMaxZoom = DEFAULT_MAX_ZOOM;
     }
 
-    public void onClampToJeremias(View view) {
+
+
+    public void onClampToAdelaide(View view) {
         if (!checkReady()) {
             return;
         }
         mMap.setLatLngBoundsForCameraTarget(ADELAIDE);
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(ADELAIDE_CAMERA));
+    }
+
+    public void onClampToIFTO(View view) {
+        if (!checkReady()) {
+            return;
+        }
+        mMap.setLatLngBoundsForCameraTarget(IFTO_PALMAS);
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(IFTO_PALMAS_CAMERA));
     }
 
     public void onLanLngClampToReset(View view) {
