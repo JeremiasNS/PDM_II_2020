@@ -63,6 +63,10 @@ public class MapsActivity extends
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(ADELAIDE_CAMERA));
     }
 
+    public void onSetLatLngIFTO(View view){
+
+    }
+
     public void onLanLngClampToReset(View view) {
         if (!checkReady()) {
             return;
