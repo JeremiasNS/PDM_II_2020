@@ -23,4 +23,4 @@
 27/02/2020 - Utilizando o google maps<br/>
 05/03/2020 - Utilizando google maps para localização de usuário<br/> 
 26/03/2020 - Notificações com BroadcastReceiver<br/>
-02/04/2020 - Outras eventos com BroadcastReceiver<br/>
+02/04/2020 - Outras eventos com BroadcastReceiver e animações com lottie<br/>
