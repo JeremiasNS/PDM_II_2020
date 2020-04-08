@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                         contato.put("body",body);
 
                         listaContatos.add(contato);
-                        //System.out.println("AKI-------------------");
 
                     }
                 } catch (JSONException e) {

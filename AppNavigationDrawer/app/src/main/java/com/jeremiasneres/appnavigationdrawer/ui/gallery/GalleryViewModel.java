@@ -1,5 +1,7 @@
 package com.jeremiasneres.appnavigationdrawer.ui.gallery;
 
+import android.media.Image;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

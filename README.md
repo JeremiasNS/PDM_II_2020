@@ -3,7 +3,7 @@
 ##Conteúdo programatico das aulas de programação para dispositivos móveis em java.
 
 -> Consumir/enviar JSON<br/>
--> Navigator drawner<br/>
+-> Navigation drawner<br/>
 -> mapas<br/>
 -> GPS<br/>
 -> BroadCastReceiver<br/>

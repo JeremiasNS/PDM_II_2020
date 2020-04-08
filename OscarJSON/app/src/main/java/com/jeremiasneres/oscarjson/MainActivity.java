@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         direcao = findViewById(R.id.etxt_direcao);
         categoria = findViewById(R.id.etxt_categoria);
 
-
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

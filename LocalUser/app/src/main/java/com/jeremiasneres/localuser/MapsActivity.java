@@ -23,7 +23,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         GoogleMap.OnMyLocationButtonClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback {
 
-
     private GoogleMap mMap;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean mPermissionDenied = false;
@@ -88,8 +87,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void showMissingPermissionError(){
-        PermissionUtils.PermissionDeniedDialog.newInstance(true)
-                .show(getSupportFragmentManager(), "dialog");
+        //PermissionUtils.PermissionDeniedDialog.newInstance(true).show(getSupportFragmentManager(), "dialog");
     }
 
     @Override
