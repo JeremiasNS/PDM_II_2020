@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl0c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl0c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl0c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl0c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl0c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl0c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl0c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl0c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl0c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl0c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl0c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl0c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl1c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl1c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl1c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl1c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl1c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl1c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl1c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl1c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl1c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl1c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl1c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl1c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl2c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl2c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl2c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl2c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl2c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl2c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl2c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl2c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl2c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl2c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl2c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl2c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl3c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl3c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl3c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl3c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl3c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl3c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl3c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl3c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl3c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl3c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl3c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl3c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl4c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl4c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl4c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl4c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl4c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl4c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl4c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl4c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl4c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl4c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl4c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl4c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl5c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl5c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl5c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl5c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl5c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl5c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl5c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl5c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl5c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl5c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl5c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl5c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl6c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl6c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl6c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl6c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl6c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl6c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl6c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl6c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl6c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl6c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl6c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl6c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl7c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl7c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl7c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl7c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl7c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl7c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl7c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl7c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl7c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl7c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl7c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl7c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:id="@+id/txtl8c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl8c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl8c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl8c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl8c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl8c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl8c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl8c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl8c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl8c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl8c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl8c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:id="@+id/txtl9c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl9c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl9c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl9c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl9c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl9c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl9c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl9c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl9c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl9c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl9c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl9c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/txtl10c0"
+                style="@style/txtStyleStandard"
+                android:text="A " />
+            <TextView
+                android:id="@+id/txtl10c1"
+                style="@style/txtStyleStandard"
+                android:text="B " />
+            <TextView
+                android:id="@+id/txtl10c2"
+                style="@style/txtStyleStandard"
+                android:text="C " />
+            <TextView
+                android:id="@+id/txtl10c3"
+                style="@style/txtStyleStandard"
+                android:text="D " />
+            <TextView
+                android:id="@+id/txtl10c4"
+                style="@style/txtStyleStandard"
+                android:text="E " />
+            <TextView
+                android:id="@+id/txtl10c5"
+                style="@style/txtStyleStandard"
+                android:text="F " />
+            <TextView
+                android:id="@+id/txtl10c6"
+                style="@style/txtStyleStandard"
+                android:text="G " />
+            <TextView
+                android:id="@+id/txtl10c7"
+                style="@style/txtStyleStandard"
+                android:text="H " />
+            <TextView
+                android:id="@+id/txtl10c8"
+                style="@style/txtStyleStandard"
+                android:text="I " />
+            <TextView
+                android:id="@+id/txtl10c9"
+                style="@style/txtStyleStandard"
+                android:text="J " />
+            <TextView
+                android:id="@+id/txtl10c10"
+                style="@style/txtStyleStandard"
+                android:text="K " />
+            <TextView
+                android:id="@+id/txtl10c11"
+                style="@style/txtStyleStandard"
+                android:text="L " />
+        </TableRow>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
