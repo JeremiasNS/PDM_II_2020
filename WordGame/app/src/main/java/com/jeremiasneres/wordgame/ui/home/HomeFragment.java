@@ -1,37 +1,66 @@
 package com.jeremiasneres.wordgame.ui.home;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.google.gson.Gson;
+import com.jeremiasneres.wordgame.Auxiliar;
+import com.jeremiasneres.wordgame.Palavra;
 import com.jeremiasneres.wordgame.R;
+import com.jeremiasneres.wordgame.ui.gallery.GalleryFragment;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import static android.graphics.Color.BLACK;
 import static android.graphics.Color.BLUE;
 import static android.graphics.Color.RED;
 import static android.graphics.Color.WHITE;
+import static android.graphics.Color.YELLOW;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
+
+    private int notificationId = 1;
 
     String letras[] = {"A", "B", "C", "D", "E", "F", "G",
             "H", "I", "J", "K", "L", "M", "N", "O", "P",
             "Q", "R", "S", "T", "U", "V", "W", "X",
             "Y", "Z"};
 
-    //String orientacao[] = {"horizontal", "vertical"};
-    String palavra = "tomate";
-    String localPalavras[] = new String[12];
+    private static String url = "https://api.dicionario-aberto.net/random";
+
+    private String palavra = "TOMATE";
+    private TextView[] localPalavras = new TextView[palavra.length()];;
     int linhaInicio;
     int colunaInicio;
 
@@ -74,6 +103,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         Collections.shuffle(Arrays.asList(letras));
 
+        ObterRecurso or = new ObterRecurso();
+        or.execute();
+
         //Linkar com o componente da view
         for (int linhas = 0; linhas < textViewsObject.length; linhas++) {
             for (int cols = 0; cols < textViewsObject[0].length; cols++) {
@@ -85,15 +117,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         for (int linhas = 0; linhas < textViewsObject.length; linhas++) {
             for (int cols = 0; cols < textViewsObject[0].length; cols++) {
                 textViewsObject[linhas][cols].setText(letras[embaralhar(letras.length)]);
-                textViewsObject[linhas][cols].setTextColor(WHITE);
             }
         }
-
-        //for (int i = 0; i < palavras.length; i++){
-        //   String palavraSelecionada = palavras[i];
-        //int indicePalavra = procurarIndicePalavra(palavraSelecionada);
-
-
 
         // pega as letras da palavra e coloca em um array de char
         char[] arrayPalavra = palavra.toCharArray();
@@ -103,85 +128,24 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         colunaInicio = embaralhar(11);
         colunaInicio = verificarLimiteHorizontal(palavra.length(), colunaInicio);
 
-
-        //gerar posições
-        for (int h = 0; h < arrayPalavra.length; h++) {
-            localPalavras[h] = String.valueOf(linhaInicio) + String.valueOf(colunaInicio);
-            System.out.println(String.valueOf(linhaInicio) + String.valueOf(colunaInicio));
-            colunaInicio++;
-        }
-
-         /*//enviar palavras a view
+         //enviar palavras a view
             for (int h = 0; h < arrayPalavra.length; h++){
                 textViewsObject[linhaInicio][colunaInicio].setText(String.valueOf(arrayPalavra[h]));
-                textViewsObject[linhaInicio][colunaInicio].setTextColor(RED);
+                localPalavras[h] = textViewsObject[linhaInicio][colunaInicio];
+                System.out.println(String.valueOf(linhaInicio) + String.valueOf(colunaInicio));
                 colunaInicio++;
-            }*/
-
-        /*int f = 0;
-        String r = "nada";
-
-        for (int g = 0; g < arrayPalavra.length; g ++){
-            r = localPalavras[g];
-            System.out.println(r);
-        }*/
-
-        //if (orientacao[embaralhar(orientacao.length)].equals("horizontal") ){
-
-
-
-            /*}else if (orientacao[embaralhar(orientacao.length)].equals("vertical")) {
-                colunaInicio = embaralhar(11);
-                linhaInicio = embaralhar(10);
-
-                linhaInicio = verificarLimiteVertical(palavraSelecionada.length(), linhaInicio);
-
-                char[] arrayPalavra = palavraSelecionada.toCharArray();
-                for (int h = 0; h < arrayPalavra.length; h++){
-                    textViewsObject[linhaInicio][colunaInicio].setText(String.valueOf(arrayPalavra[h]));
-                    textViewsObject[linhaInicio][colunaInicio].setTextColor(BLUE);
-                    localPalavras[indicePalavra][h] = String.valueOf(linhaInicio) + String.valueOf(colunaInicio);
-                    linhaInicio++;
-                }
-             Toast.makeText(getActivity().getApplicationContext(), "...", Toast.LENGTH_LONG).show();
             }
-            }*/
+
+
 
         return view;
     }
-
-
-    /*public void verConflitos(String palavraEscolhida) {
-        int indicePalavra = procurarIndicePalavra(palavraEscolhida);
-        boolean x = false;
-        while (x == false) {
-            int linhaInicio = embaralhar(10);
-            int colunaInicio = embaralhar(11);
-            colunaInicio = verificarLimiteHorizontal(palavraEscolhida.length(), colunaInicio);
-
-            System.out.println("palavra " + palavras[indicePalavra]);
-            for (int k = 0; k < palavraEscolhida.length(); k++) {
-                //if (localPalavras[indicePalavra][k]);
-            }
-            x = true;
-        }
-    }*/
-
 
     public int embaralhar(int limitador) {
         //Embaralhando as letras atráves da posição
         int res = random.nextInt(limitador);
         return res;
     }
-
-    /*public int procurarIndicePalavra(String palavra){
-        for (int j = 0; j < palavras.length; j++){
-            if (palavras[j].equals(palavra)){
-                return j;
-            }
-        }
-        return 0;
-    };*/
 
     public int verificarLimiteHorizontal(int tamanhoPalavra, int posicaoInicial){
         if (12 - posicaoInicial < tamanhoPalavra ){
@@ -190,29 +154,63 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return posicaoInicial;
     }
 
-    /*public int verificarLimiteVertical(int tamanhoPalavra, int posicaoInicial){
-        if (11 - posicaoInicial < tamanhoPalavra ){
-            return 11 - tamanhoPalavra;
-        }
-        return posicaoInicial;
-    }*/
-
+    int u = palavra.length();
 
     @Override
     public void onClick(View v) {
-        //txt1.setText("a");
-        /*
-        * switch (v.getId()) {
-                    case R.id.button_submit:
-                        edttxt_projectname.setText("Test Submit!#@%!#%");
-                        break;
-                default:
-                        break;
-                    }*/
-               /*
-        for (int i = 0; i < textViewsObject.length; i++) {
-            int res = random.nextInt(letras.length);
-            textViewsObject[i].setText(letras[res]);
-        }*/
+
+        if (u > 0){
+            for (int i = 0; i < palavra.length(); i++){
+                if (v.getId() == localPalavras[i].getId()) {
+                    localPalavras[i].setBackgroundColor(YELLOW);
+                    localPalavras[i].setClickable(false);;
+                    System.out.println(localPalavras[i].getId());
+                }
+            }
+            System.out.println(u);
+            u--;
+        }else {
+            Toast.makeText(getActivity().getApplicationContext(), "Fim de Jogo!", Toast.LENGTH_SHORT).show();
+
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity().getApplicationContext(), "11")
+                    .setSmallIcon(R.drawable.ic_menu_slideshow)
+                    .setContentTitle("Vocẽ Finalizou o Jogo!")
+                    .setContentText("Parabéns")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+            //Registro da notificação no gerenciador
+            NotificationManagerCompat nm = NotificationManagerCompat.from(getActivity().getApplicationContext());
+            nm.notify(notificationId, builder.build());
+
+        }
     }
+
+private class ObterRecurso extends AsyncTask<Void,Void,Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Toast.makeText(getActivity().getApplicationContext(), "download JSON...", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... strings) {
+                String resultado = "";
+                Auxiliar auxiliar = new Auxiliar();
+                String jsonStr = auxiliar.consumir(url);
+                Gson gson = new Gson();
+                //Object porque é uma lista de pessoas, se fosse uma colocarias Pessoa.class
+                Palavra o = gson.fromJson(jsonStr,Palavra.class);
+            return null;
+        }
+
+    @Override
+    protected void onPostExecute(Void aVoid) {
+        super.onPostExecute(aVoid);
+
+    }
+
+
+    }
+
 }
