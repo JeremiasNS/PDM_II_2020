@@ -40,6 +40,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
 import static android.graphics.Color.BLACK;
 import static android.graphics.Color.BLUE;
@@ -59,7 +60,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private static String url = "https://api.dicionario-aberto.net/random";
 
-    private String palavra = "TOMATE";
+    private String palavra;
     private TextView[] localPalavras = new TextView[palavra.length()];;
     int linhaInicio;
     int colunaInicio;
@@ -104,7 +105,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Collections.shuffle(Arrays.asList(letras));
 
         ObterRecurso or = new ObterRecurso();
-        or.execute();
+
+        try {
+            palavra = or.execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         //Linkar com o componente da view
         for (int linhas = 0; linhas < textViewsObject.length; linhas++) {
@@ -185,7 +193,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-private class ObterRecurso extends AsyncTask<Void,Void,Void> {
+private class ObterRecurso extends AsyncTask<Void,Void,String> {
 
         @Override
         protected void onPreExecute() {
@@ -194,21 +202,21 @@ private class ObterRecurso extends AsyncTask<Void,Void,Void> {
         }
 
         @Override
-        protected Void doInBackground(Void... strings) {
+        protected String doInBackground(Void... strings) {
                 String resultado = "";
                 Auxiliar auxiliar = new Auxiliar();
                 String jsonStr = auxiliar.consumir(url);
                 Gson gson = new Gson();
                 //Object porque é uma lista de pessoas, se fosse uma colocarias Pessoa.class
-                Palavra o = gson.fromJson(jsonStr,Palavra.class);
-            return null;
+                Palavra palavra = gson.fromJson(jsonStr,Palavra.class);
+
+            return palavra.getWord();
         }
 
-    @Override
+    /*@Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-
-    }
+    }*/
 
 
     }
