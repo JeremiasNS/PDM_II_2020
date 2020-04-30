@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">CronogramaEstudantil</string>
+    <string name="questoes_portugues">
+        Complete as assertivas abaixo:\n
+        \n1. ......... Pelé foi o melhor jogador de futebol do século XX.
+        \nConcerteza
+        \nComcerteza
+        \nCom certeza
+        \n\n2. Ela sempre resolve os problemas com bastante ..........
+        \nDiscrição
+        \nDescrição
+        \nTodas as anteriores
+        \n\n3. Camila falou que queria ......... exemplos, ......... não falou quantos.
+        \nMás / mais
+        \nMais / mais
+        \nMais / más
+        \nMais / mas
+    </string>
+    <string name="questoes_matematica">
+        \nComplete as assertivas abaixo:
+        \n\n1. Dois pais e dois filhos sentaram-se para comer ovos no café da manhã. Cada um comeu um ovo. Quanto ovos eles comeram no total?
+        \n1
+        \n3
+        \n5
+        \n8
+        \n\n2. Andando por uma rua, um homem conta 10 árvores à sua direita. Na volta, conta 10 árvores à sua esquerda. Quantas árvores ele viu no total?
+        \n10
+        \n20
+        \n30
+        \n40
+        \n\n3. Em uma igreja havia 4 velas. Entraram 2 ladrões e cada um levou uma vela. Quantas velas ficaram?
+        \n1
+        \n2
+        \n4
+        \n6
+    </string>
+    <string name="channel_description">channel</string>
+    <string name="channel_name">my channel</string>
+
+
+</resources>
