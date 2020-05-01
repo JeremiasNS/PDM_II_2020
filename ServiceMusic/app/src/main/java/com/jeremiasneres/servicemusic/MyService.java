@@ -22,7 +22,8 @@ public class MyService extends Service {
                     mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.thedelongincident);
                     mediaPlayer.start();
                 }else {
-                    mediaPlayer.stop();
+                    mediaPlayer.release();
+                    mediaPlayer = null;
                     mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.thedelongincident);
                     mediaPlayer.start();
                 }
@@ -40,6 +41,7 @@ public class MyService extends Service {
 
     @Override
     public void onDestroy() {
+
         mediaPlayer.stop();
         super.onDestroy();
     }
