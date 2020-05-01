@@ -18,9 +18,15 @@ public class MyService extends Service {
         String action = intent.getStringExtra("key_action");
 
         if (action.equals("play")){
-            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.thedelongincident);
-            mediaPlayer.start();
-        }else if (mediaPlayer != null){
+                if (mediaPlayer == null ){
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.thedelongincident);
+                    mediaPlayer.start();
+                }else {
+                    mediaPlayer.stop();
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.thedelongincident);
+                    mediaPlayer.start();
+                }
+        }else if (action.equals("pause") && mediaPlayer != null){
             if (mediaPlayer.isPlaying()){
                 mediaPlayer.pause();
             }else {
