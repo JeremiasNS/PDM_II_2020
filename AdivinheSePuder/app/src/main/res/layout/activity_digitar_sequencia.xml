@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DigitarSequencia">
+
+    <TextView
+        android:id="@+id/sequenciaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Na ordem exibida,\n digite a sequência:"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/sequencia"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/sequencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="1º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:text="2º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:text="3º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:text="4º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:text="5º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:text="6º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:text="7º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:text="8º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="8"
+            android:text="9º" />
+
+        <TextView
+            style="@style/styleEditText2"
+            android:layout_row="0"
+            android:layout_column="9"
+            android:text="10º" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="1" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="2" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="3" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="4" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="5" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="6" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="7" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="8" />
+
+        <EditText
+            style="@style/styleEditText1"
+            android:layout_row="1"
+            android:layout_column="9" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/conferir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="conferir"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sequencia" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
