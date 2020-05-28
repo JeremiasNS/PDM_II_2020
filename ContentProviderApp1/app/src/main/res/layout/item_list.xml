@@ -8,28 +8,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nome:"
-        android:textColor="#000"
-        android:textSize="30dp" />
+        android:textColor="#404040"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#000"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Contato:"
-        android:textColor="#000"
-        android:textSize="30dp" />
+        android:textColor="#404040"
+        android:textSize="15dp"/>
 
     <TextView
         android:id="@+id/contato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#000"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
 
 </LinearLayout>
