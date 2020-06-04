@@ -7,12 +7,14 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private int hora;
     private int minuto;
     private Button button;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.btnCadastrar);
         timePicker = findViewById(R.id.tempo);
         spinner = (Spinner) findViewById(R.id.materia);
+        editText = findViewById(R.id.edtTxtMail);
+
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
         R.array.materias_array, android.R.layout.simple_spinner_item);
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
         createNotificationChannel("1");
         createNotificationChannel("2");
 
@@ -62,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
         Intent i = new Intent(this, AlarmReceiver.class);
         i.putExtra("key_materia", spinner.getSelectedItem().toString());
+        i.putExtra("key_mail", editText.getText().toString());
+        editText.setText("");
         final int id = (int) System.currentTimeMillis();
         pendingIntent = PendingIntent.getBroadcast(this, id, i, 0);
 

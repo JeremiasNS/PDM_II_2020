@@ -23,6 +23,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tempo"
         />
+
+    <TextView
+        android:id="@+id/lblMail"
+        android:layout_width="200dp"
+        android:text="E-mail"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/edtTxtMail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/edtTxtMail"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/labelTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/materia"/>
+
     <TextView
         android:id="@+id/labelTime"
         android:layout_width="wrap_content"

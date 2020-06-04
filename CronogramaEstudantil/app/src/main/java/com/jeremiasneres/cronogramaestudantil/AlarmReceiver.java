@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
@@ -16,11 +17,31 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+
+        String email = intent.getStringExtra("key_mail");
+        String materia = intent.getStringExtra("key_materia");
+
+        Log.i("Send email", "");
+        String[] TO = {email};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Agenda de Estudo");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hora de estudar!"+materia);
+        emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        Intent chooserIntent = Intent.createChooser(emailIntent, "");
+        chooserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(emailIntent);
+
         // Create an explicit intent for an Activity in your app
         Intent j;
         String channel;
         int id;
-        String materia = intent.getStringExtra("key_materia");
         if( materia.equals("Português")){
             j = new Intent(context, Questoes1Activity.class);
             id = 1;
