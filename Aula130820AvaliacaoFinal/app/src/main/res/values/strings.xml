@@ -1,0 +1,189 @@
+<resources>
+    <string name="app_name">Aula130820AvaliacaoFinal</string>
+    <string name="channel_name">covidappnotify</string>
+    <string name="channel_description">canal de notificacao do app avaliativo</string>
+    <string-array name="perguntas">
+        <item>Sente febre?</item>
+        <item>Sente-se cansado?</item>
+        <item>Está tossindo?</item>
+        <item>Está espirrando?</item>
+        <item>Sente dores no corpo e mal-estar?</item>
+        <item>Apresenta coriza ou nariz entupido?</item>
+        <item>Sente dor de garganta?</item>
+        <item>Apresenta diarreia?</item>
+        <item>Sente dor de cabeça?</item>
+        <item>Sente falta de ar?</item>
+        <item>Apresenta quadro de emagrecimento?</item>
+        <item>Apresenta transpiração noturna?</item>
+    </string-array>
+    <string-array name="opcoesSpin">
+        <item>Selecione</item>
+        <item>Sim</item>
+        <item>Às vezes</item>
+        <item>Não</item>
+        <item>Raramente</item>
+    </string-array>
+    <string-array name="iconePerguntas">
+        <item>febre</item>
+        <item>cansaco</item>
+        <item>tosse</item>
+        <item>espirros</item>
+        <item>dor_no_corpo</item>
+        <item>coriza_ou_nariz_entupido</item>
+        <item>dor_de_garganta</item>
+        <item>diarreia</item>
+        <item>dor_de_cabeca</item>
+        <item>falta_de_ar</item>
+        <item>emagrecimento</item>
+        <item>transpiracao_noturna</item>
+    </string-array>
+    <!--Tuberculose txt help-->
+    <string name="rec_tuberculose_header">Escrito por\n Redação Minha Vida</string>
+    <string name="rec_tuberculose_titulo1">Buscando ajuda médica</string>
+    <string name="rec_tuberculose_txt1">\tOs principais sinais e sintomas relativos à tuberculose
+        também são comuns a outras doenças e, em geral, necessitam de atenção médica. A tosse insistente
+        e contínua é uma das principais características da doença – principalmente quando vem acompanhada
+        de sangue\n
+        \tSe você apresentar os sintomas descritos acima, é melhor procurar a ajuda de um médico o quanto
+        antes. Se o diagnóstico for positivo para tuberculose, o médico deverá notificar as autoridades
+        e tomar as medidas cabíveis para que você não transmita a bactéria para outras pessoas. Para isso,
+        é necessário que o tratamento se inicie imediatamente.</string>
+    <string name="rec_tuberculose_titulo2">Tratamento de Tuberculose pulmonar</string>
+    <string name="rec_tuberculose_txt2">O tratamento para tuberculose pulmonar é feito,
+        basicamente, por meio de medicamentos, assim como acontece no caso de outras infecções bacterianas.
+        O tratamento da tuberculose, por outro lado, é muito mais difícil e costuma demorar mais tempo do
+        que a duração média para outros tipos de infecções causadas por bactérias.\n
+        O uso de antibióticos contra tuberculose deve acontecer por, pelo menos, de seis a nove meses,
+        dependendo do paciente. O tipo de medicamento utilizado e o tempo exato de duração do tratamento
+        variam de acordo com a idade, com a presença ou ausência de outras condições de saúde, com uma
+        possível resistência da cepa bacteriana identificada no diagnóstico, com a forma de tuberculose
+        (latente ou ativa) e com os locais do corpo que foram afetados pela infecção.\n
+        Experimentos recentes revelaram que o uso combinado de diversos medicamentos por apenas quatro
+        meses tem se mostrado mais eficiente no combate à evolução da tuberculose, principalmente em
+        pacientes diagnósticos com a doença em estado latente. O tempo menor de tratamento garante que a
+        pessoa tenha acesso à toda medicação que necessita e, ainda por cima, diminui as chances de ela
+        desenvolver efeitos colaterais.</string>
+    <string name="rec_tuberculose_titulo3">Tuberculose pulmonar tem cura?</string>
+    <string name="rec_tuberculose_txt3">Interromper o uso dos antibióticos ou não toma-los de
+        acordo com a orientação médica pode fazer com que as bactérias sobreviventes tornem-se resistentes
+        aos medicamentos usados em seu tratamento, tornando o quadro infeccioso muito mais grave e difícil
+        de tratar.\n
+        Se a pessoa seguir o tratamento corretamente, os sinais e sintomas desaparecerão com o tempo e logo
+        os antibióticos serão capazes de matar todas as bactérias presentes no corpo, levando o indivíduo à
+        cura.\n
+        De acordo com a OMS, entre 2000 e 2013, 37 milhões de vidas foram salvas graças às novas técnicas
+        de tratamento disponíveis para tuberculose.</string>
+    <string name="rec_tuberculose_titulo4">Prevenção</string>
+    <string name="rec_tuberculose_txt4">A melhor forma de se prevenir contra a tuberculose
+        pulmonar é tomando a vacina.</string>
+    <string name="rec_tuberculose_footer">Leia mais em: https://www.minhavida.com.br/saude/temas/tuberculose-pulmonar</string>
+
+    <!--Resfriado txt help-->
+    <string name="rec_resfriado_header">Por Michelle Achkar</string>
+    <string name="rec_resfriado_titulo1">Saiba como cuidar do resfriado em alguns passos</string>
+    <string name="rec_resfriado_parag1">Segundo estatísticas do Hospital Baylor-Garland, no Texas, Estados
+        Unidos, um adulto pega cerca de três resfriados por ano, que chegam a durar até nove dias. O site
+        da revista Health elaborou dicas para serem colocadas em prática quando os primeiro sintomas
+        começam a aparecer, o que pode ajudar a diminuir a intensidade do problema e aumentar o bem-estar.
+        Confira:</string>
+    <string name="rec_resfriado_subtitulo1">Combater os primeiro sintomas</string>
+    <string name="rec_resfriado_parag2">Assim que sentir que o resfriado se aproxima, aumente a ingestão
+        de líquidos , água ou sucos, pois o corpo hidratado ameniza sintomas como garganta dolorida ou
+        nariz entupido.</string>
+    <string name="rec_resfriado_subtitulo2">Faça gargarejo com sal</string>
+    <string name="rec_resfriado_parag3">Se a garganta começar  a aranhar, faça gargarejos com água morna
+        misturada a uma meia colher de chá de sal. O ingrediente diminui o excesso de água nos tecidos da
+        região, reduzindo inflamação, limpando mucosas e eliminando bactérias e vírus, o que colabora
+        para curar um resfriado ou mesmo ajuda a evitar um.</string>
+    <string name="rec_resfriado_subtitulo3">Dispense remédios para tosse</string>
+    <string name="rec_resfriado_parag4">O bom e velho mel pode ajudar a amenizar a tosse. Ingerir suas
+        colheres de sopa diretamente do pote ou misturá-las ao chá é o indicado. Isso porque sprays e
+        outros remédios, como pastilhas, não têm eficiência comprovada, segundo o médico Harley Rotbart,
+        da Faculdade de Medicina da Universidade do Colorado.</string>
+    <string name="rec_resfriado_subtitulo4">Nas seis horas seguintes</string>
+    <string name="rec_resfriado_parag5">Se puder, não trabalhe. O corpo consegue combater melhor a virose
+        se estiver em repouso. Se não for possível, apenas mantenha-se a certa distância dos colegas de
+        trabalho e lembre-se de lavar as mãos com muita frequência e aplicar gel com ação desinfetante.
+    </string>
+    <string name="rec_resfriado_subtitulo5">Mexa-se um pouco</string>
+    <string name="rec_resfriado_parag6">Praticar exercícios leves pode ajudar o sistema imunológico a
+        reagir, mas é preciso manter os batimentos cardíacos abaixo de 100 batidas por minuto.</string>
+    <string name="rec_resfriado_subtitulo6">No dia seguinte</string>
+    <string name="rec_resfriado_parag7">Se acordar sentindo-se pior, com ânsias de vômito ou dores de
+        cabeça, ligue para o médico, pois esses sintomas podem indicar a presença e outras doenças além de
+        um simples resfriado.</string>
+    <string name="rec_resfriado_footer">
+        Leia máteria completa em: https://www.terra.com.br/vida-e-estilo/saude/doencas-e-tratamentos/saiba-como-cuidar-do-
+        resfriado-em-10-passos,eb017e5685c9a310VgnVCM3000009acceb0aRCRD.html</string>
+
+    <!--Gripe txt help-->
+    <string name="rec_gripe_header">Por André Biernath\n Saúde - abril</string>
+    <string name="rec_gripe_titulo1">Como se curar da gripe?</string>
+    <string name="rec_gripe_txt1">\tNão tem como escapar: fazer repouso e tomar remédios estão entre os
+        principais tratamentos para amenizar os sintomas da doença</string>
+    <string name="rec_gripe_txt2">\tPara se curar - ou melhor, tratar - a gripe, o paciente deve
+        repousar e beber bastante água. Com supervisão do médico, ele pode recorrer a um antiviral ou
+        outros remédios (antitérmicos, analgésicos…) que controlam os sintomas da doença, como febre e
+        dores. Em sete dias, a infecção costuma perder a força.</string>
+    <string name="rec_gripe_subtitulo1">Sem tirar o pijama</string>
+    <string name="rec_gripe_txt3parag1">\tNão se sente bem? O primeiro passo é ficar de cama. Como a gripe dá
+        febre, dor muscular e mexe com o corpo todo, é natural se sentir esgotado. Além de ajudar na
+        recuperação, permanecer em casa evita que você repasse, mesmo sem querer, o vírus para colegas e
+        familiares e, assim, ajude a aumentar a estatística de casos.</string>
+    <string name="rec_gripe_txt3parag2">
+        \tSe você perceber que os sintomas estão piorando a febre só aumenta
+        ou o catarro mudou de cor é bom visitar o pronto-socorro. “A assistência médica vai investigar o
+        que está acontecendo e agir com rapidez. Em alguns casos, quando o quadro ainda está nas primeiras
+        48 horas, é possível iniciar um tratamento com um remédio antiviral específico”, orienta a
+        clínica-geral Telma Carvalhanas, diretora técnica da Divisão de Doenças de Transmissão
+        Respiratória da Secretaria da Saúde do Estado de São Paulo.</string>
+    <string name="rec_gripe_footer">Leia mais em: https://saude.abril.com.br/medicina/como-curar-gripe/</string>
+
+    <!--Covid19 txt help-->
+    <string name="rec_covid19_header">Por dasa.com.br</string>
+    <string name="rec_covid19_titulo1">O que fazer diante de sintomas leves</string>
+    <string name="rec_covid19_txt1">A maioria dos casos de Coronavírus são assintomáticos ou apresentam
+        sintomas de leves a moderados, e  a orientação do Ministério da Saúde e da Organização Mundial
+        da Saúde é que, em caso de suspeita da doença, o paciente permaneça em casa, isolado dos demais
+        moradores durante o período de incubação(14 dias). O  atendimento hospitalar deve ser procurado se os
+        sintomas se agravarem, principalmente se o paciente apresentar falta de ar ou dificuldade de
+        respirar.</string>
+    <string name="rec_covid19_subtitulo1"></string>
+    <string name="rec_covid19_titulo2">Como agir em caso confirmado de coronavírus em casa</string>
+    <string name="rec_covid19_txt2parag1">O Ministério de Saúde recomenda o isolamento domiciliar para pacientes
+        com suspeita ou confirmação de COVID-19.</string>
+    <string name="rec_covid19_txt2parag2">O isolamento domiciliar funciona da seguinte maneira:\n
+	\t\t&#187; paciente deve se manter em um cômodo separado dos demais moradores da casa;\n
+	\t\t&#187; Manter a porta fechada e as janelas abertas para maior circulação de ar;\n
+	\t\t&#187; Trocar a própria roupa de cama e se houver secreções, o paciente deve embalar em um saco plástico
+        antes de levar à lavagem.\n
+	\t\t&#187; Não compartilhar talheres, pratos, copos, toalhas de corpo e rosto;\n
+	\t\t&#187; Separar os resíduos em uma lixeira individual que só o paciente manuseie;\n
+	\t\t&#187; Higienizar o banheiro após o uso com água sanitária ou álcool 70%;\n
+	\t\t&#187; Manter a higienização de todos os objetos usados pelo paciente;\n
+	\t\t&#187; Evitar áreas comuns, mas se for necessário, o paciente deve utilizar a  máscara o tempo todo.
+    </string>
+    <string name="rec_covid19_txt2parag3">Caso não seja possível manter o paciente em um cômodo e banheiro
+        isolados, a médica infectologista Roberta Schiavon, integrante da Sociedade Brasileira de
+        Infectologia (SBI), sugere que as pessoas saudáveis devem procurar a casa de algum parente,
+        pois há um grande risco de contaminação. Embora todos os cuidados de higienização sejam tomados,
+        isso apenas diminui a possibilidade, mas não impede a transmissão.</string>
+    <string name="rec_covid19_titulo3">O que fazer para melhorar os sintomas?</string>
+    <string name="rec_covid19_txt3">A automedicação não é indicada e não deve ser feita. Para auxiliar na
+        melhora dos sintomas de COVID-19, mantenha uma boa alimentação rica em proteínas e sais minerais,
+        evite comidas de baixo valor nutricional, como fast-foods e se hidrate.</string>
+    <string name="rec_covid19_titulo4">Devo tomar algum medicamento se apresentar sintomas de
+        coronavírus?</string>
+    <string name="rec_covid19_txt4parag1">De acordo com o Ministério da Saúde, até o momento não há
+        medicamento antiviral específico para tratar a COVID-19. Pessoas com sintomas graves devem ser
+        hospitalizadas.
+    </string>
+    <string name="rec_covid19_txt4parag2">Não se automedique! O tratamento deve ser prescrito por médico e
+        seguido à risca. A automedicação pode apresentar riscos e seus efeitos colaterais, em alguns
+        casos, pode levar o paciente a óbito. Se os medicamentos não forem suficientes e os sintomas se
+        agravarem, a recomendação é que busque atendimento hospitalar com urgência.</string>
+    <string name="rec_covid19_txt4parag3">A maioria dos pacientes conseguem se recuperar graças aos
+        cuidados de suporte.</string>
+    <string name="rec_covid19_footer">Leia mais em: https://dasa.com.br/blog-coronavirus/estou-com-coronavirus-e-agora</string>
+    <string name="label">Nome</string>
+</resources>

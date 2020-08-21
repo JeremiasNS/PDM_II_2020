@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecomendacaoTuberculoseActivity"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tuberculoseHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/rec_tuberculose_header"/>
+    <TextView
+        android:id="@+id/tuberculoseTitle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseHeader"
+        android:text="@string/rec_tuberculose_titulo1"
+        style="@style/styleTitulo"/>
+
+    <uk.co.deanwild.flowtextview.FlowTextView
+        android:id="@+id/ftv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseTitle1">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieEmergencycall"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            app:lottie_rawRes="@raw/emergencycalledited"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"/>
+    </uk.co.deanwild.flowtextview.FlowTextView>
+
+    <TextView
+        android:id="@+id/tuberculoseTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ftv"
+        android:text="@string/rec_tuberculose_titulo2"
+        style="@style/styleTitulo"/>
+    <TextView
+        android:id="@+id/tuberculoseTxt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseTitle2"
+        android:text="@string/rec_tuberculose_txt2"
+        style="@style/styleTexto"/>
+    <TextView
+        android:id="@+id/tuberculoseTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseTxt2"
+        android:text="@string/rec_tuberculose_titulo3"
+        style="@style/styleTitulo"/>
+    <TextView
+        android:id="@+id/tuberculoseTxt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseTitle3"
+        android:text="@string/rec_tuberculose_txt3"
+        style="@style/styleTexto"/>
+    <TextView
+        android:id="@+id/tuberculoseTitle4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseTxt3"
+        android:text="@string/rec_tuberculose_titulo4"
+        style="@style/styleTitulo"/>
+    <TextView
+        android:id="@+id/tuberculoseTxt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseTitle4"
+        android:text="@string/rec_tuberculose_txt4"
+        style="@style/styleTexto"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tuberculoseTxt4"
+        android:text="@string/rec_tuberculose_footer"
+        style="@style/styleRodape"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

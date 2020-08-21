@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecomendacaoCovidActivity"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/covid19Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/rec_covid19_header"/>
+        <TextView
+            android:id="@+id/covid19Title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Header"
+            android:text="@string/rec_covid19_titulo1"
+            style="@style/styleTitulo"/>
+
+        <TextView
+            android:id="@+id/covid19Txt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Title1"
+            android:text="@string/rec_covid19_txt1"
+            style="@style/styleTexto"/>
+        <TextView
+            android:id="@+id/covid19Subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Txt1"
+            android:text="@string/rec_covid19_subtitulo1"
+            style="@style/styleSubTitulo"/>
+        <TextView
+            android:id="@+id/covid19Title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Subtitle1"
+            android:text="@string/rec_covid19_titulo2"
+            style="@style/styleTitulo"/>
+        <TextView
+            android:id="@+id/covid19Txt2p1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Title2"
+            android:text="@string/rec_covid19_txt2parag1"
+            style="@style/styleTexto"/>
+        <TextView
+            android:id="@+id/covid19Txt2p2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Txt2p1"
+            android:text="@string/rec_covid19_txt2parag2"
+            style="@style/styleTexto"/>
+        <TextView
+            android:id="@+id/covid19Txt2p3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Txt2p2"
+            android:text="@string/rec_covid19_txt2parag3"
+            style="@style/styleTexto"/>
+        <TextView
+            android:id="@+id/covid19Title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Txt2p3"
+            android:text="@string/rec_covid19_titulo3"
+            style="@style/styleTitulo"
+            />
+
+        <TextView
+            android:id="@+id/covid19Txt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Title3"
+            android:text="@string/rec_covid19_txt3"
+            style="@style/styleTexto" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieDeffendCovid"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        app:lottie_rawRes="@raw/defendfromcovid19"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:layout_constraintTop_toBottomOf="@id/covid19Txt3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/covid19Title4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/lottieDeffendCovid"
+            android:text="@string/rec_covid19_titulo4"
+            style="@style/styleTitulo" />
+
+        <TextView
+            android:id="@+id/covid19Txt4p1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Title4"
+            android:text="@string/rec_covid19_txt4parag1"
+            style="@style/styleTexto" />
+
+        <TextView
+            android:id="@+id/covid19Txt4p2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Txt4p1"
+            android:text="@string/rec_covid19_txt4parag2"
+            style="@style/styleTexto" />
+
+        <TextView
+            android:id="@+id/covid19Txt4p3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Txt4p2"
+            android:text="@string/rec_covid19_txt4parag3"
+            style="@style/styleTexto" />
+
+        <TextView
+            android:id="@+id/covid19Footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/covid19Txt4p3"
+            android:text="@string/rec_covid19_footer"
+            style="@style/styleRodape" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

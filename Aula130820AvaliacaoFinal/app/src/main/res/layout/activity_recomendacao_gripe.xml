@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecomendacaoTuberculoseActivity"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/gripeHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/rec_gripe_header"/>
+        <TextView
+            android:id="@+id/gripeTitulo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gripeHeader"
+            android:text="@string/rec_gripe_titulo1"
+            style="@style/styleTitulo"/>
+        <TextView
+            android:id="@+id/gripeTxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gripeTitulo1"
+            android:text="@string/rec_gripe_txt1"
+            style="@style/styleTexto"/>
+        <TextView
+            android:id="@+id/gripeTxt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gripeTxt1"
+            android:text="@string/rec_gripe_txt2"
+            style="@style/styleTexto"/>
+        <TextView
+            android:id="@+id/gripeSubTitulo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gripeTxt2"
+            android:text="@string/rec_gripe_subtitulo1"
+            style="@style/styleSubTitulo"/>
+        <TextView
+            android:id="@+id/gripeTxt3parag1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gripeSubTitulo1"
+            android:text="@string/rec_gripe_txt3parag1"
+            style="@style/styleTexto"/>
+
+        <uk.co.deanwild.flowtextview.FlowTextView
+            android:id="@+id/gripeTxt3parag2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gripeTxt3parag1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieEmergencycall"
+                android:layout_width="172dp"
+                android:layout_height="172dp"
+                android:layout_alignParentRight="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_marginTop="100dp"
+                android:padding="10dp"
+                app:lottie_rawRes="@raw/coldfearfulfaceemoji"/>
+        </uk.co.deanwild.flowtextview.FlowTextView>
+
+        <TextView
+            android:id="@+id/gripeFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gripeTxt3parag2"
+            android:text="@string/rec_gripe_footer"
+            style="@style/styleRodape" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
