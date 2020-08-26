@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton imageButton;
     private ImageView imgCapture;
+
     private static final int Image_Capture_Code = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

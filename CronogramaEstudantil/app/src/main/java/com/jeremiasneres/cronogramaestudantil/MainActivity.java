@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-        createNotificationChannel("1");
-        createNotificationChannel("2");
+        /*createNotificationChannel("1");
+        createNotificationChannel("2");*/
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void disparar (){
         alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
+
         Intent i = new Intent(this, AlarmReceiver.class);
         i.putExtra("key_materia", spinner.getSelectedItem().toString());
         i.putExtra("key_mail", editText.getText().toString());
         editText.setText("");
+
         final int id = (int) System.currentTimeMillis();
         pendingIntent = PendingIntent.getBroadcast(this, id, i, 0);
 
@@ -81,10 +83,9 @@ public class MainActivity extends AppCompatActivity {
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()
                 , pendingIntent);
 
-        System.out.println(calendar.getTimeInMillis());
     }
 
-    private void createNotificationChannel(String CHANNEL_ID) {
+/*    private void createNotificationChannel(String CHANNEL_ID) {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -98,5 +99,5 @@ public class MainActivity extends AppCompatActivity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
-    }
+    }*/
 }

@@ -9,7 +9,6 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
-
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -20,25 +19,28 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         String email = intent.getStringExtra("key_mail");
         String materia = intent.getStringExtra("key_materia");
+        Intent i = new Intent(Intent.ACTION_SENDTO);
+            i.setData(Uri.parse("mailto:")); // only email apps should handle this
+            i.putExtra(Intent.EXTRA_EMAIL, email);
+            i.putExtra(Intent.EXTRA_CC, email);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        Log.i("Send email", "");
-        String[] TO = {email};
-        String[] CC = {""};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        int idStringPort = context.getResources().getIdentifier("questoes_portugues",
+                "string", context.getPackageName());
+        int idStringMat = context.getResources().getIdentifier("questoes_matematica",
+                "string", context.getPackageName());
 
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-        emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Agenda de Estudo");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hora de estudar!"+materia);
-        emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if( materia.equals("Português")){
+            i.putExtra(Intent.EXTRA_SUBJECT, "Hora de estudar Português!");
+            i.putExtra(Intent.EXTRA_TEXT,  context.getResources().getString(idStringPort));
+        }else {
+            i.putExtra(Intent.EXTRA_SUBJECT, "Hora de estudar Matemática!");
+            i.putExtra(Intent.EXTRA_TEXT,  context.getResources().getString(idStringMat));
+        }
+                context.startActivity(i);
 
-        Intent chooserIntent = Intent.createChooser(emailIntent, "");
-        chooserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(emailIntent);
 
-        // Create an explicit intent for an Activity in your app
+        /* Create an explicit intent for an Activity in your app
         Intent j;
         String channel;
         int id;
@@ -68,5 +70,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         Uri som = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Ringtone toque = RingtoneManager.getRingtone(context, som);
         toque.play();
+        */
+
     }
 }
